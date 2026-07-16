@@ -18,3 +18,17 @@ function checkCountValue (){
     }
 
 }
+
+function decreaseCount (){
+    count--;
+    displayCount();
+    checkCountValue();
+}
+
+function clearCount (){
+    do{
+        count--;
+    }while (count > 0);
+    alert("Followers have been reset");
+    displayCount();
+}
