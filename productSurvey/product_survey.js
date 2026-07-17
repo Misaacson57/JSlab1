@@ -1,5 +1,3 @@
-
-
 const submitButton=document.getElementById('submitBtn');
 
 function submitFeedback (){
@@ -10,6 +8,7 @@ function submitFeedback (){
     const designation = document.getElementById('designation').value;
     const productType = document.getElementById('productType').value;
     const feedback = document.getElementById('feedbackText').value;
+    const exp = document.getElementById('exp').value;
 
     document.getElementById('userName').innerHTML= username;
     document.getElementById('userAge').innerHTML = age;
@@ -18,6 +17,8 @@ function submitFeedback (){
     document.getElementById('userDesignation').innerHTML = designation;
     document.getElementById('userProductChoice').innerHTML = productType;
     document.getElementById('userFeedback').innerHTML = feedback;
+    document.getElementById('userExperience').innerHTML = exp;
+
 
     document.getElementById('userInfo').style.display = 'block';
     // Above line of code uses JavaScript to access an HTML element identified by the ID 'userInfo'.
