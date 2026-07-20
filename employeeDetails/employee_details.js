@@ -1,14 +1,14 @@
 const employees = [
-      { id: 1, name: 'John Doe', age: 30, department: 'IT', salary: 50000 },
-      { id: 2, name: 'Alice Smith', age: 28, department: 'HR', salary: 45000 },
-      { id: 3, name: 'Bob Johnson', age: 35, department: 'Finance', salary: 60000 },
+      { id: 1, name: 'John Doe', age: 30, department: 'IT', salary: 50000, specialty: 'Java' },
+      { id: 2, name: 'Alice Smith', age: 28, department: 'HR', salary: 45000, specialty: 'JavaScript' },
+      { id: 3, name: 'Bob Johnson', age: 35, department: 'Finance', salary: 60000, specialty: 'Python' },
       //... More employee records can be added here
     ];
 
     //the function im making now wull display all EMployees and details
 function displayEmployees(){
     const totalEmployees = employees
-    .map(employee => `<p>${employee.id}: ${employee.name} - ${employee.department} - $${employee.salary}</p>`)
+    .map(employee => `<p>${employee.id}: ${employee.name} - ${employee.department} - $${employee.salary} - ${employee.specialty}</p>`)
     .join('');
     document.getElementById('employeesDetails').innerHTML = totalEmployees;
 }
@@ -35,10 +35,20 @@ function displayHREmployees(){
 function findEmployeeById(employeeId) {
       const foundEmployee = employees.find(employee => employee.id === employeeId);
       if (foundEmployee) {
-      document.getElementById('employeesDetails').innerHTML =`<p>${foundEmployee.id}: ${foundEmployee.name}: ${foundEmployee.name} - ${foundEmployee.department} - $${foundEmployee.salary}</p>`;
+      document.getElementById('employeesDetails').innerHTML =`<p>${foundEmployee.id}: 
+      ${foundEmployee.name}: ${foundEmployee.name} - ${foundEmployee.department} - $${foundEmployee.salary} - ${foundEmployee.specialty}</p>`;
       }
       else{
         document.getElementById('employeesDetails').innerHTML = 'no employee has been found with this ID';
        }
    }
 // this part will look for employees details with the ID
+
+function findSpecialty(employeeSpecialty){
+    const foundSpecialty = employees.find(employee => employee.specialty === employeeSpecialty);
+    if (foundSpecialty) {
+        document.getElementById('employeesDetails').innerHTML =`<p>${foundSpecialty.id}: ${foundSpecialty.name}: ${foundSpecialty.name} - ${foundSpecialty.department} -$${foundSpecialty.salary} - ${foundSpecialty.specialty}</p>`;
+    } else {
+        document.getElementById('employeesDetails').innerHTML = 'No Specialty found';
+    }
+}
